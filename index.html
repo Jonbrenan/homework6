@@ -8,10 +8,125 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="container row">
+        <div class="container col">
+            <div class="card" style="width: 18rem;">
+               
+
+                <form class="form-inline">
+                    <div class="form-group mb-2">
+                      <label for="staticEmail2" class="sr-only">Email</label>
+                      <input type="text" readonly class="form-control-plaintext" id="inputContent" value="search for city">
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                      <label for="inputPassword2" class="sr-only">Password</label>
+                      <input type="input" class="form-control" id="searchBar" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2" id="searchButton">Search City</button>
+                  </form>
 
 
-    
+
+
+
+                <ul class="list-group list-group-flush" id="buttonList">
+                  
+                </ul>
+              </div>
+        </div>
+
+
+
+                
+        <div class="container col">
+            <div class="card">
+                <h5 class="card-header" id="cityName"></h5>
+                <div class="card-body" id="mainDiv">
+                  
+                </div>
+              </div>
+
+
+
+
+              <div class = "row">
+                  <div class = "col">
+                    <div class="card">
+                        <h5 class="card-header">Featured</h5>
+                        <div class="card-body">
+                          <h5 class="card-title">5 Day Forcast</h5>
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="card">
+                                <div class="card-body">
+                                  <h5 class="card-title" id="day2"></h5>
+                                  <img id="day2Img">
+                                  <p class="card-text" id="temp2"></p>
+                                  <p class="card-text" id="humid2"></p>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="card">
+                                <div class="card-body">
+                                  <h5 class="card-title" id ="day3"></h5>
+                                  <img id="day3Img">
+                                  <p class="card-text" id ="temp3"></p>
+                                  <p class="card-text" id ="humid3"></p>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="card">
+                                <div class="card-body">
+                                  <h5 class="card-title" id="day4"></h5>
+                                  <img id="day4Img">
+                                  <p class="card-text" id="temp4"></p>
+                                  <p class="card-text" id ="humid4"></p>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="card">
+                                <div class="card-body">
+                                  <h5 class="card-title" id="day5"></h5>
+                                  <img id="day5Img">
+                                  <p class="card-text" id="temp5"></p>
+                                  <p class="card-text" id ="humid5"></p>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="card">
+                                <div class="card-body">
+                                  <h5 class="card-title" id="day6"></h5>
+                                  <img id="day6Img">
+                                  <p class="card-text" id="temp6"></p>
+                                  <p class="card-text" id="humid6"></p>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+
+              </div>
+
+
+        </div>
+    </div>
+
     <script src="java.js"></script>
-
 </body>
 </html>

@@ -1,3 +1,20 @@
-.weatherIcon {
+.floaty {
     float: left;
+}
+
+.bg {
+    background-color: white;
+}
+
+
+.low {
+    background-color: green;
+}
+
+.mid {
+    background-color: red;
+}
+
+.high {
+    background-color: purple;
 }
