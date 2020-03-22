@@ -11,6 +11,24 @@ let mainDiv = document.getElementById('mainDiv')
 
 let cities = []
 
+var storedNames = JSON.parse(localStorage.getItem("cityList"))
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     for(i=0; i < storedNames.length; i++)
+//     cities.push(storedNames[i])
+// })
+
+
+// function returnInfo () {
+  
+
+// }
+
+
+
+
+
+// this is the function that renders the buttons
 function renderButtons (title) {
     let list = document.getElementById('buttonList')
 
@@ -27,9 +45,19 @@ function renderButtons (title) {
 
         list.appendChild(li)
         li.appendChild(button)
+
+        localStorage.setItem('cityList', JSON.stringify(cities))
+        
+        
+        console.log(storedNames)
+       
     })
 }
 
+
+
+
+// this code adds an event listener for the search button. It executes data from APIs to fill weather reports
 
 let searchbutton= document.getElementById('searchButton')
 
@@ -49,7 +77,7 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=' + title + '&appid=bff
 .then(function (data) {
    
     let cityName=document.getElementById('cityName')
-    let date = new Date();
+    
     let weatherIcon=document.createElement('img')
     weatherIcon.setAttribute('class', 'bg')
     let tempC=data.main.temp - 273.15
@@ -60,10 +88,13 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=' + title + '&appid=bff
     currentHumid.textContent= 'Humidity: ' + data.main.humidity + '%'
     currentWind.textContent=data.wind.speed+ ' MPH'
 
- 
-    let year = (date.getFullYear());
-    let month = (date.getMonth());
-    let day = (date.getDay());
+    let d = new Date();
+    console.log(d)
+    let year = d.getFullYear()
+    let month = d.getMonth() +1
+    console.log(d.getMonth())
+    let day = d.getDate();
+    
     let weatherCode= data.weather[0].icon
     let weatherCondition = 'http://openweathermap.org/img/wn/' + weatherCode + '@2x.png'
     weatherIcon.src=weatherCondition
@@ -71,6 +102,9 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=' + title + '&appid=bff
     
 
     cityName.textContent=title + ' ' + '(' + year + '/' + month + '/' + day + ')' + ' '
+    
+
+    localStorage.setItem("header", cityName.textContent)
 
     cityName.appendChild(weatherIcon)
     mainDiv.appendChild(currentTemp)
